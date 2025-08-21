@@ -1,39 +1,28 @@
 import React from "react";
 import "./HeroSection.css";
 
-// Import your images here
-import img1 from "../assets/img1.png";
-import img2 from "../assets/img2.png";
-import img3 from "../assets/img3.png";
-import img4 from "../assets/img4.png";
-import img5 from "../assets/img5.png";
+import bgd2 from "../assets/bgd2.jpeg";
+import img1 from "../assets/1.png";
+import img2 from "../assets/2.png";
+import img3copy from "../assets/31.png";
+import img3 from "../assets/3.jpeg";
+import img5 from "../assets/5.png";
+import img6 from "../assets/6.png";
+import img7 from "../assets/7.png";
+import img4 from "../assets/4.png";
 
 const HeroSection = () => {
   return (
-    <section className="hero">
-      {/* Navbar */}
-      <div className="hero-navbar">
-        <h1 className="logo">
-          <span className="ted">TED</span>
-          <span className="x">x</span>
-          TIET
-        </h1>
-        <button className="menu-btn">≡</button>
-      </div>
-
-      {/* Center Image Collage */}
-      <div className="hero-images">
-        <img src={img1} alt="Person 1" />
-        <img src={img2} alt="Person 2" />
-        <img src={img3} alt="Person 3" />
-        <img src={img4} alt="Person 4" />
-        <img src={img5} alt="Person 5" />
-      </div>
-
-      {/* Tagline */}
-      <div className="hero-text">
-        <h2>TED x TIET</h2>
-        <p>The unseen dimension</p>
+    <section className="homefnt" style={{ backgroundImage: `url(${bgd2})` }}>
+      <div className="home">
+        <span className="textmask" style={{ "--bg-img": `url(${img1})` }}>T</span>
+        <span className="textmask" style={{ "--bg-img": `url(${img2})` }}>E</span>
+        <span className="textmask" style={{ "--bg-img": `url(${img3copy})` }}>D</span>
+        <span className="textmask" style={{ "--bg-img": `url(${img3})` }}>x</span>
+        <span className="textmask" style={{ "--bg-img": `url(${img5})` }}>T</span>
+        <span className="textmask" style={{ "--bg-img": `url(${img6})` }}>I</span>
+        <span className="textmask" style={{ "--bg-img": `url(${img7})` }}>E</span>
+        <span className="textmask" style={{ "--bg-img": `url(${img4})` }}>T</span>
       </div>
     </section>
   );
