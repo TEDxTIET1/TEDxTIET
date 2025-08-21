@@ -1,0 +1,103 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000 url("https://www.transparenttextures.com/patterns/stardust.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  overflow: hidden;
+}
+
+/* Navbar */
+.hero-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo .ted {
+  color: #e62b1e;
+}
+
+.logo .x {
+  color: #e62b1e;
+  margin: 0 2px;
+}
+
+.menu-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.hero-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  flex: 1;
+  padding: 0 5%;
+  overflow: hidden;
+}
+
+/* Default (middle images cropped) */
+.hero-images img {
+  width: 200px;              /* narrow strip */
+  height: 70vh;
+  object-fit: cover;
+  object-position: center;   /* crop sides, keep center */
+  transition: transform 0.3s ease;
+}
+
+/* First (left) and last (right) images full */
+.hero-images img:first-child,
+.hero-images img:last-child {
+  width: auto;               /* let them take natural width */
+  max-width: 300px;          /* optional: control size */
+  object-fit: cover;
+  object-position: center;   /* still keep proportion */
+}
+
+/* Yellow strip effect on middle image */
+.hero-images img:nth-child(3) {
+  background: #fbbf24;
+  padding: 0 8px;
+}
+
+.hero-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .hero-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-images img {
+    width: 80%;
+    height: 35vh;
+  }
+
+  .hero-images img:first-child,
+  .hero-images img:last-child {
+    width: 90%;    /* show fully */
+    max-width: none;
+  }
+}
