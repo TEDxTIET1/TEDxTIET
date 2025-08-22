@@ -1,0 +1,33 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* Remove conflicting styles and add animation support */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure smooth animations */
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+/* Prevent any CSS conflicts with GSAP animations */
+.translate-y-101 {
+  transform: translateY(101%);
+}
+
+.translate-y-neg-101 {
+  transform: translateY(-101%);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

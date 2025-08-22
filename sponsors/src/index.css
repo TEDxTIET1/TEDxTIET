@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+/* Ensure animations work */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-25%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Debug: Add some visible transitions */
+.transition-all {
+  transition: all 0.3s ease-out;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease-out;
+}
