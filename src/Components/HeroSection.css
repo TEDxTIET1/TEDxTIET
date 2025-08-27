@@ -1,0 +1,42 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-top: 0;
+  margin-top: 4.2vw;
+}
+
+.homefnt {
+  width: 100%;
+  height: 50lvw;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.textmask {
+  color: rgb(255, 229, 213);
+  font-size: 44vw;
+  font-weight: bolder;
+  font-family: "Myfont";
+}
+
+.textmask:hover {
+  color: transparent;
+  background-image: var(--bg-img);
+  background-size: 50vw;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-position-y: 9.5vw;
+  /* background-position: center;
+  -webkit-background-clip: text; */
+  background-clip: text;
+}
+
+
+
+@font-face {
+  font-family: "Myfont";
+  src: url("../assets/MangoGrotesque-ExtraBold.otf");
+}
