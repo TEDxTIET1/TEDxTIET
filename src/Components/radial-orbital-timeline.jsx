@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Link } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import timelineData from "./timelineData";
 
 export default function RadialOrbitalTimeline({ timelineData }) {
   const [expandedItems, setExpandedItems] = useState({});
