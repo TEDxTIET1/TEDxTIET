@@ -6,6 +6,7 @@ import CustomNavbar from "./Components/navbar";
 import Cards from "./Components/Cards.jsx";
 
 import ProfileCard from "./Components/ProfileCard.jsx";
+import Footer from "./Components/Footer.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Cards />
 
       <ProfileCard />
+      <Footer />
     </div>
   );
 }

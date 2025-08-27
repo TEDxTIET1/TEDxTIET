@@ -60,6 +60,9 @@ function Footer() {
           padding: "20px",
         }}
       >
+        <span style={{ fontSize: "28px", marginRight: "20px" }}>
+          Find us at:{" "}
+        </span>
         <a
           href="https://www.facebook.com/tedxtiet/"
           target="_blank"
@@ -121,7 +124,7 @@ function Footer() {
         ></a>
       </div>
       <hr style={{ border: "1px solid white", marginBottom: "10px" }} />
-      <p>© {new Date().getFullYear()} 2025 TEDxTIET. All rights reserved.</p>
+      <p>© {new Date().getFullYear()} TEDxTIET. All rights reserved.</p>
     </footer>
   );
 }
