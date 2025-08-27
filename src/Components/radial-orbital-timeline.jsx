@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Link } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import timelineData from "./timelineData";
 
 export default function RadialOrbitalTimeline({ timelineData }) {
   const [expandedItems, setExpandedItems] = useState({});
@@ -107,10 +108,9 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                 {/* Node circle */}
                 <div
                   className={`w-12 h-12 rounded-full flex items-center justify-center
-                    ${
-                      isExpanded
-                        ? "bg-[var(--tedx-red)] text-white"
-                        : "bg-black text-white border border-white/40"
+                    ${isExpanded
+                      ? "bg-[var(--tedx-red)] text-white"
+                      : "bg-black text-white border border-white/40"
                     }
                     transition-all duration-300 transform
                     ${isExpanded ? "scale-125 shadow-lg shadow-red-500/40" : ""}
@@ -121,9 +121,8 @@ export default function RadialOrbitalTimeline({ timelineData }) {
 
                 {/* Node label */}
                 <div
-                  className={`absolute top-14 whitespace-nowrap text-xs font-semibold tracking-wider transition-all duration-300 ${
-                    isExpanded ? "text-[var(--tedx-red)] scale-110" : "text-white/70"
-                  }`}
+                  className={`absolute top-14 whitespace-nowrap text-xs font-semibold tracking-wider transition-all duration-300 ${isExpanded ? "text-[var(--tedx-red)] scale-110" : "text-white/70"
+                    }`}
                 >
                   {item.title}
                 </div>
@@ -137,8 +136,8 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                           {item.status === "completed"
                             ? "COMPLETE"
                             : item.status === "in-progress"
-                            ? "IN PROGRESS"
-                            : "PENDING"}
+                              ? "IN PROGRESS"
+                              : "PENDING"}
                         </Badge>
                       </div>
                       <CardTitle className="text-sm mt-2">{item.title}</CardTitle>
