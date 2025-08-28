@@ -6,23 +6,23 @@ const timelineData = [
     {
         id: 1,
         title: "Kickoff Event",                      // 👈 node label
-        content: "Project kickoff and scope alignment.", // 👈 card content
+        content: "Keshav Sadhna, famed for his role as Karan in College Romance, captivates millions with his authentic acting, infectious energy, and versatility, emerging as a leading face of India’s digital entertainment and Gen-Z storytelling.", // 👈 card content
         status: "completed",                         // "completed" | "in-progress" | "pending"
         icon: Calendar,
         relatedIds: [2, 3],                          // 👈 connected nodes
     },
     {
         id: 2,
-        title: "Speaker Onboarding",
-        content: "Confirm speakers, collect bios, and prep slides.",
+        title: "DIKSHANT",
+        content: "Dikshant Jadhav is a rising music star known for his soulful voice and hit song 'Aankhon Se Batana' which has garnered millions of streams and widespread acclaim for its emotional depth.",
         status: "in-progress",
         icon: Mic,
         relatedIds: [1],
     },
     {
         id: 3,
-        title: "Launch Day",
-        content: "Public launch, PR push, and social media blast.",
+        title: "HARINI SIVAKUMAR",
+        content: "Harini Sivakumar, a former homemaker, founded Earth Rhythm after seeking safe, non-toxic skincare for her special-needs son. Starting small, she built a Rs 200 crore, plastic-negative clean beauty brand inspiring wellness and sustainability.",
         status: "pending",
         icon: Rocket,
         relatedIds: [1],
