@@ -31,7 +31,7 @@ export default function ContactForm() {
 
     return (
         <div className="login-box">
-            <h2>Send Query</h2>
+            <h2>Contact Us</h2>
             <form ref={formRef} onSubmit={sendEmail}>
                 <div className="user-box">
                     <input type="text" name="name" required />
