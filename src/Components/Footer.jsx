@@ -1,5 +1,6 @@
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -36,7 +37,7 @@ function Footer() {
           marginTop: "15px",
         }}
       ></hr>
-      <a href="" style={{ textDecoration: "none" }}>
+      <Link to="/contact" style={{ textDecoration: "none" }}>
         <h3
           style={{
             height: "50px",
@@ -49,7 +50,7 @@ function Footer() {
         >
           CONTACT US.
         </h3>
-      </a>
+      </Link>
       <div
         style={{
           display: "flex",
