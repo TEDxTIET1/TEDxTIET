@@ -65,7 +65,8 @@
 
 /* Hide vertical scrollbar but keep scrolling */
 body {
-  overflow-y: scroll;      /* still allow scrolling */
+  overflow-x: hidden;
+  overflow-y: auto;      /* still allow scrolling */
   scrollbar-width: none;   /* Firefox */
 }
 

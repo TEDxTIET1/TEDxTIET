@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 
@@ -13,13 +13,14 @@ import Team from "./Components/Team.jsx";
 import Sponsor from "./Components/Sponsor.jsx";
 import Speaker from "./Components/Speaker.jsx";
 import StatsOverview from "./Components/StatsOverview.jsx";
+import Reveal from "./Components/Reveal"; // ✅ import preloader
 
+// Scroll handler for /aboutus → testimonials
 function ScrollHandler() {
   const location = useLocation();
 
   useEffect(() => {
     if (location.pathname === "/aboutus") {
-      // Redirects to home but scrolls to testimonials
       const testimonials = document.getElementById("testimonials");
       if (testimonials) {
         testimonials.scrollIntoView({ behavior: "smooth" });
@@ -31,13 +32,28 @@ function ScrollHandler() {
 }
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Show preloader for ~2s, then remove
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Reveal />; // ✅ Show preloader first
+  }
+
   return (
     <div className="App">
       <CustomNavbar />
       <ScrollHandler />
 
       <Routes>
-        {/* Home page (full layout) */}
+        {/* Home page */}
         <Route
           path="/"
           element={
@@ -47,10 +63,8 @@ function App() {
                 <div id="testimonials"></div>
                 <TestimonialSlider />
               </header>
-              <StatsOverview/>
+              <StatsOverview />
               <Cards />
-              {/* <ProfileCard /> */}
-              
               <Footer />
             </>
           }
@@ -67,7 +81,6 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/speakers" element={<Speaker />} />
-
 
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />
