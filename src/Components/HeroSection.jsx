@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./HeroSection.css";
-
-import bgd2 from "../assets/HeroSection/bgd2.webp";
+// import bgd2 from "../assets/Resource Boy - Light Leak Overlays/240.jpg";
+import bgd2 from "../assets/HeroSection/bgd5.webp";
 import img1 from "../assets/HeroSection/1.webp";
 import img2 from "../assets/HeroSection/2.webp";
 import img3copy from "../assets/HeroSection/31.webp";
@@ -25,7 +25,9 @@ const HeroSection = () => {
 
   return (<>
     <CustomNavbar/>
-    <section className="homefnt" style={{ backgroundImage: `url(${bgd2})` }}>
+    
+    <section className="homefnt" style={{backgroundImage: `url(${bgd2}) `}}>
+
       <div className="home">
         <span className="textmask" style={{ "--bg-img": `url(${img1})` }}>T</span>
         <span className="textmask" style={{ "--bg-img": `url(${img2})` }}>E</span>

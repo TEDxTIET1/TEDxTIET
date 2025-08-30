@@ -5,6 +5,8 @@
   justify-content: center;
   padding-top: 0;
   margin-top: 4.2vw;
+  position: relative;
+  z-index: 2; /* keep text above glow */
 }
 
 .homefnt {
@@ -13,6 +15,9 @@
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  background-position: top left;
+  position: relative; /* so absolute glow works */
+  /* background-color: rgb(170, 0, 0); */
 }
 
 .textmask {
@@ -29,12 +34,8 @@
   background-repeat: no-repeat;
   background-position: top left;
   background-position-y: 9.5vw;
-  /* background-position: center;
-  -webkit-background-clip: text; */
   background-clip: text;
 }
-
-
 
 @font-face {
   font-family: "Myfont";

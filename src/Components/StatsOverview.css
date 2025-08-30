@@ -1,0 +1,77 @@
+.stats-overview {
+  min-height: 100vh;
+  background: #000000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 3rem);
+}
+
+.stats-container {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 6vw, 4rem);
+  color: white;
+}
+
+.main-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #FFFFFF 0%, #E62B1E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(230, 43, 30, 0.5);
+}
+
+.subtitle {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-weight: 300;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.description {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
+  flex-wrap: nowrap;
+  overflow-x: visible;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.stats-grid.mobile {
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-x: visible;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #000000;
+  color: white;
+  font-size: 1.5rem;
+}

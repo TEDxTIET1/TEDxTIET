@@ -5,23 +5,45 @@ import {
   Offcanvas,
 } from "react-bootstrap";
 import "./style2.css";
-import { Link } from "react-router-dom";
-// import HeroSection from "./HeroSection";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/tedxlogo.png"; // ✅ update path to your logo file
+
 function CustomNavbar() {
-  // state to control offcanvas visibility
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    setShow(false); // close offcanvas
+    navigate("/#testimonials"); // redirect with hash
+    setTimeout(() => {
+      const el = document.getElementById("testimonials");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   return (
-    <ReactNavbar bg="dark" variant="dark" expand={false} fixed="top" className="bg-transparent border-0 shadow-none">
-      <Container fluid className="p-0 m-0">
-        {/* Hide brand */}
-        {/* <ReactNavbar.Brand href="#">Offcanvas dark navbar</ReactNavbar.Brand> */}
+    <ReactNavbar
+      bg="dark"
+      variant="dark"
+      expand={false}
+      fixed="top"
+      className="bg-transparent border-0 shadow-none"
+    >
+      <Container fluid className="p-0 m-0 d-flex align-items-center justify-content-between">
+        
+        {/* ✅ Logo on the left */}
+        {/* <Link to="/home" onClick={handleClose} className="d-flex align-items-center ms-2"> <img src={logo} alt="TEDxTIET Logo" style={{ height: "45px", width: "auto" }} /></Link> */}
 
-        {/* Only show toggle button */}
-        <ReactNavbar.Toggle onClick={handleShow} className="ms-auto" />
+        {/* ✅ Hamburger on the right */}
+        <ReactNavbar.Toggle 
+          onClick={() => setShow(true)} 
+          className="ms-auto nav-toggle-btn" 
+        />
 
         <Offcanvas
           show={show}
@@ -31,21 +53,46 @@ function CustomNavbar() {
           className="text-bg-dark"
         >
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title style={{ fontSize: "3rem", fontWeight: "bold" }}>TEDX</Offcanvas.Title>
+            <Offcanvas.Title style={{ fontSize: "3rem", fontWeight: "bold" }}>
+              TEDxTIET
+            </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <ul className="list-unstyled">
-              <li><Link className="animated-text" to="/home" >Home</Link></li>
-              <li><Link className="animated-text" to="/aboutus">About us</Link></li>
-              <li><Link className="animated-text" to="/sponsor">Sponsor</Link></li>
-              <li><Link className="animated-text" to="/team">Team</Link></li>
-              <li><Link className="animated-text" to="/speakers">Speakers</Link></li>
+              <li>
+                <Link className="animated-text" to="/home" onClick={handleClose}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="animated-text"
+                  to="/aboutus"
+                  onClick={handleAboutClick}
+                >
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link className="animated-text" to="/sponsor" onClick={handleClose}>
+                  Sponsor
+                </Link>
+              </li>
+              <li>
+                <Link className="animated-text" to="/team" onClick={handleClose}>
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link className="animated-text" to="/speakers" onClick={handleClose}>
+                  Speakers
+                </Link>
+              </li>
             </ul>
           </Offcanvas.Body>
         </Offcanvas>
       </Container>
     </ReactNavbar>
-
   );
 }
 

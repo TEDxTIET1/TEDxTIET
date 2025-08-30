@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  overflow-y:scroll;      /* keep vertical scroll working */
+  scrollbar-width: none !important;
+}
+
+body::-webkit-scrollbar {
+  display: none;           /* Chrome, Safari, Edge */
+}

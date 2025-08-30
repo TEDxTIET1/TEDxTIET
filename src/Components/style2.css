@@ -1,6 +1,6 @@
 .animated-text{
     display: inline-block;
-    max-height: 3rem;
+    max-height: 4rem;
     font-weight: bold;
       font-size: 6rem;
       text-decoration: none;
@@ -14,6 +14,7 @@
 .animated-text:hover{
     color: red;
 }
+
 
 @font-face {
   font-family: "Myfont2";

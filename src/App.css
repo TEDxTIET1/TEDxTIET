@@ -29,6 +29,7 @@
   flex: 0 0 100%; 
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -61,3 +62,14 @@
     transform: rotate(360deg);
   }
 }
+
+/* Hide vertical scrollbar but keep scrolling */
+body {
+  overflow-y: scroll;      /* still allow scrolling */
+  scrollbar-width: none;   /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;           /* Chrome, Safari, Edge */
+}
+

@@ -1,0 +1,40 @@
+export const impactData = {
+  title: "Our Impact",
+  subtitle: "Driving Innovation & Growth",
+  description: "Connecting communities through powerful content and meaningful engagement across multiple platforms.",
+  statistics: [
+    {
+      icon: "🎥",
+      number: "15M+",
+      label: "YouTube Views",
+      description: "Total views across all content",
+      value: 15000000,
+      maxProgress: 85,
+    },
+    {
+      icon: "👥",
+      number: "3K+",
+      label: "Followers",
+      description: "Growing community across platforms",
+      value: 3000,
+      maxProgress: 60,
+    },
+    {
+      icon: "📱",
+      number: "Social Media",
+      label: "Presence",
+      description: "Active across Instagram, LinkedIn & YouTube",
+      value: 100,
+      maxProgress: 100,
+      isSocialMedia: true,
+    },
+    {
+      icon: "🎤",
+      number: "20+",
+      label: "Speakers",
+      description: "Inspiring voices sharing ideas",
+      value: 20,
+      maxProgress: 75,
+    },
+  ],
+};
