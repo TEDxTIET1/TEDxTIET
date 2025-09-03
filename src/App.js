@@ -10,10 +10,12 @@ import ProfileCard from "./Components/ProfileCard.jsx";
 import Footer from "./Components/Footer.jsx";
 import NotFound from "./Components/NotFound";
 import Team from "./Components/Team.jsx";
-import Sponsor from "./Components/Sponsor.jsx";
+import Sponsors from "./Components/Sponsors.jsx";
 import Speaker from "./Components/Speaker.jsx";
 import StatsOverview from "./Components/StatsOverview.jsx";
 import Reveal from "./Components/Reveal"; // ✅ import preloader
+import ContactForm from "./Components/ContactForm.jsx";
+import InfiniteGallery from "./Components/infiniteGallery.jsx"
 
 // Scroll handler for /aboutus → testimonials
 function ScrollHandler() {
@@ -78,9 +80,10 @@ function App() {
         <Route path="/cards" element={<Cards />} />
         <Route path="/profile" element={<ProfileCard />} />
         <Route path="/footer" element={<Footer />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/sponsor" element={<Sponsor />} />
+        <Route path="/team" element={<InfiniteGallery />} />
+        <Route path="/sponsor" element={<Sponsors />} />
         <Route path="/speakers" element={<Speaker />} />
+        <Route path="/contact" element={<ContactForm />} />
 
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />
