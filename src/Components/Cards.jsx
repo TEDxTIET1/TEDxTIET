@@ -11,30 +11,28 @@ export default function ResponsiveCards() {
   const cards = [
     {
       id: 1,
-      title: "FOR OUR ADVENTURE LIFESTYLE!",
-      text: "This has completely our weekend getaways. The quality and  exceeded our expectations.",
-      author: "Monique and Ryan Nas",
-      handle: "@endlessadventureseekers",
-      image: "/profile_pic1.jpg",
-      caption: "Adventure Enthusiasts",
+      title: "Nikhil Kamath",
+      text: "The days of four-year college courses are over. Lifelong learning is the new norm—for everyone.",
+      // author: "Nikhil Kamath",
+      handle: "@nikhilkamathco",
+      image: "/spk4.png",
+      // caption: "Adventure Enthusiasts",
     },
     {
       id: 2,
-      title: "INCREDIBLE  OUTBACK!",
-      text: "From moment we started using this, our travels became enjoyable. ",
-      author: "Sarah and Mike Johnson",
-      handle: "@outbackexplorers",
-      image: "/profile_pic1.jpg",
-      caption: "Travel Bloggers",
+      title: "Keshav Sadhna",
+      text: "“Dreams don’t work unless you do. Consistency is the only way to turn passion into reality.”",
+      // author: "Keshav Sadhna",
+      handle: "@keshavsadhna",
+      image: "/spk2.jpeg",
     },
     {
       id: 3,
-      title: "BEST INVESTMENT FOR OUR FAMILY TRIPS!",
-      text: "Perfect for families who love to explore.",
-      author: "The Thompson Family",
-      handle: "@familyonwheels",
-      image: "/profile_pic1.jpg",
-      caption: "Family Travelers",
+      title: "Harini Sivakumar",
+      text: "“Every big change starts with small steps. Believe in yourself, even when no one else does.”",
+      // author: "Harini Sivakumar",
+      handle: "@harini_sivakumar",
+      image: "/spk3.jpeg",
     },
   ];
 
@@ -406,7 +404,7 @@ export default function ResponsiveCards() {
                           e.target.style.fontSize = isMobile ? "3rem" : "4rem";
                         }}
                       />
-                      <div style={captionStyle}>{testimonial.caption}</div>
+                      {/* <div style={captionStyle}>{testimonial.caption}</div> */}
                     </div>
                   </div>
                 </div>
