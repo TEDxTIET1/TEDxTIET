@@ -80,10 +80,11 @@ function App() {
         <Route path="/cards" element={<Cards />} />
         <Route path="/profile" element={<ProfileCard />} />
         <Route path="/footer" element={<Footer />} />
-        <Route path="/team" element={<InfiniteGallery />} />
+        <Route path="/gallery" element={<InfiniteGallery />} />
         <Route path="/sponsor" element={<Sponsors />} />
         <Route path="/speakers" element={<Speaker />} />
         <Route path="/contact" element={<ContactForm />} />
+        <Route path="/team" element={<Team />} />
 
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />

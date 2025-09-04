@@ -12,10 +12,10 @@ export default function ContactForm() {
 
         emailjs
             .sendForm(
-                "service_ydbgjnd",   // ✅ Replace with your Service ID
-                "template_l5s1qgt", // ✅ Replace with your Template ID
+                "service_nh86wvl",   // ✅ Replace with your Service ID
+                "template_19cpuat", // ✅ Replace with your Template ID
                 formRef.current,
-                { publicKey: "Nv4ZdesHr_WOMukIt" } // ✅ Replace with your Public Key
+                { publicKey: "PTD1pglSvedAnAHyf" } // ✅ Replace with your Public Key
             )
             .then(
                 (response) => {

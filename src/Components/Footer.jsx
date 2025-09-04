@@ -39,17 +39,34 @@ function Footer() {
       ></hr>
       <Link to="/contact" style={{ textDecoration: "none" }}>
         <h3
-          style={{
-            height: "50px",
-            margin: "auto",
-            alignContent: "center",
-            margintop: "10px",
-            marginbottom: "30px",
-            color: "red",
-          }}
-        >
-          CONTACT US.
-        </h3>
+  style={{
+    height: "50px",
+    margin: "10px auto 30px auto",
+    width: "fit-content",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "0 20px",
+    color: "red",
+    border: "2px solid red",
+    borderRadius: "8px",
+    cursor: "pointer",
+    transition: "all 0.3s ease",
+  }}
+  onMouseOver={(e) => {
+    e.target.style.backgroundColor = "red";
+    e.target.style.color = "white";
+    e.target.style.transform = "scale(1.05)";
+  }}
+  onMouseOut={(e) => {
+    e.target.style.backgroundColor = "transparent";
+    e.target.style.color = "red";
+    e.target.style.transform = "scale(1)";
+  }}
+>
+  CONTACT US
+</h3>
+
       </Link>
       <div
         style={{

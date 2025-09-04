@@ -66,11 +66,9 @@ function CustomNavbar() {
               </li>
               <li>
                 <Link
-                  className="animated-text"
-                  to="/aboutus"
-                  onClick={handleAboutClick}
+                  className="animated-text" to="/gallery" onClick={handleClose}
                 >
-                  About us
+                  Gallery
                 </Link>
               </li>
               <li>
