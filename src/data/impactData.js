@@ -20,10 +20,15 @@ export const impactData = {
       maxProgress: 60,
     },
     {
-      icon: "📱",
-      number: "Social Media",
+      icon: <svg xmlns="http://www.w3.org/2000/svg"
+        width="36" height="36" viewBox="0 0 24 24" fill="red">
+        <circle cx="12" cy="8" r="6" />
+        <path d="M8 14l-2 8 6-3 6 3-2-8" />
+      </svg>
+      ,
+      number: "8 years",
       label: "Presence",
-      description: "Active across Instagram, LinkedIn & YouTube",
+      description: "Eight Year Lagacy",
       value: 100,
       maxProgress: 100,
       isSocialMedia: true,

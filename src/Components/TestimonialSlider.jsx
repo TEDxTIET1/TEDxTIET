@@ -68,9 +68,8 @@ export default function TestimonialSlider() {
               {testimonials.map((_, index) => (
                 <span
                   key={index}
-                  className={`indicator ${
-                    index === current ? "active" : ""
-                  }`}
+                  className={`indicator ${index === current ? "active" : ""
+                    }`}
                 >
                   {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </span>
