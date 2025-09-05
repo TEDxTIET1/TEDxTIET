@@ -343,7 +343,7 @@ export default function ResponsiveCards() {
             fontSize: '4rem'
           }}
         >
-          Past Speaker
+          Past Speakers
         </h1>
 
         <style>
