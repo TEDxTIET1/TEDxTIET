@@ -34,26 +34,7 @@ export default function ContactForm() {
     };
     return (
         <div>
-            <button
-                onClick={goHome}
-                style={{
-                    position: "absolute",
-                    top: "10px",
-                    left: "10px",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer", width: "50px",   // ✅ make button clickable in full area
-                    height: "50px",  // ✅ same size as SVG
-                    padding: 0,
-                }}>
-                <svg
-                    width="50" height="50" viewBox="0 0 50 50" aria-label="Back" xmlns="http://www.w3.org/2000/svg" style={{ cursor: "pointer" }}>
-                    <circle
-                        cx="25" cy="25" r="24" fill="#E02424" style={{ cursor: "pointer" }} />
-                    <path d="M29 16 L20 25 L29 34" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <line x1="21" y1="25" x2="36" y2="25" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
-                </svg>
-            </button>
+
             <div className="login-box">
                 <h2>Contact Us</h2>
                 <form ref={formRef} onSubmit={sendEmail}>
@@ -73,8 +54,32 @@ export default function ContactForm() {
                     </div>
 
                     <button type="submit">Send</button>
+
                 </form>
+
             </div>
+            <button
+                onClick={goHome}
+                style={{
+                    position: "fixed",   // fixed to viewport
+                    bottom: "10px",      // distance from bottom edge
+                    left: "10px",        // distance from left edge
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    width: "50px",       // ensure clickable area matches svg
+                    height: "50px",
+                    padding: 0,
+                    zIndex: 1000
+                }}>
+                <svg
+                    width="50" height="50" viewBox="0 0 50 50" aria-label="Back" xmlns="http://www.w3.org/2000/svg" style={{ cursor: "pointer" }}>
+                    <circle
+                        cx="25" cy="25" r="24" fill="#E02424" style={{ cursor: "pointer" }} />
+                    <path d="M29 16 L20 25 L29 34" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <line x1="21" y1="25" x2="36" y2="25" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+                </svg>
+            </button>
         </div>
     );
 }

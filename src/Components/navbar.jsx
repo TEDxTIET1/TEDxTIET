@@ -35,14 +35,14 @@ function CustomNavbar() {
       className="bg-transparent border-0 shadow-none"
     >
       <Container fluid className="p-0 m-0 d-flex align-items-center justify-content-between">
-        
+
         {/* ✅ Logo on the left */}
         {/* <Link to="/home" onClick={handleClose} className="d-flex align-items-center ms-2"> <img src={logo} alt="TEDxTIET Logo" style={{ height: "45px", width: "auto" }} /></Link> */}
 
         {/* ✅ Hamburger on the right */}
-        <ReactNavbar.Toggle 
-          onClick={() => setShow(true)} 
-          className="ms-auto nav-toggle-btn" 
+        <ReactNavbar.Toggle
+          onClick={() => setShow(true)}
+          className="ms-auto nav-toggle-btn"
         />
 
         <Offcanvas

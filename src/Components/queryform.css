@@ -6,6 +6,10 @@ body {
     font-family: sans-serif;
 }
 
+.back-btn {
+    cursor: pointer;
+}
+
 .login-box {
     position: absolute;
     top: 50%;
@@ -82,9 +86,4 @@ body {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
-}
-
-button {
-    background-color: black;
-    margin-left: 0;
 }
