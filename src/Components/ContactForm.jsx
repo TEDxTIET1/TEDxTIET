@@ -30,7 +30,7 @@ export default function ContactForm() {
             );
     };
     const goHome = () => {
-        window.location.href = "/";
+        window.location.href = "/home";
     };
     return (
         <div>
