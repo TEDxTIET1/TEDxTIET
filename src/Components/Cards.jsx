@@ -336,6 +336,25 @@ export default function ResponsiveCards() {
       }}
     >
       <div style={containerStyle}>
+        <h1
+          style={{
+            fontFamily: "Myfont2, sans-serif",
+            color: 'red',
+            fontSize: '4rem'
+          }}
+        >
+          Past Speaker
+        </h1>
+
+        <style>
+          {`
+    @font-face {
+      font-family: "Myfont2";
+      src: url(data:font/opentype;base64,PUT-YOUR-BASE64-HERE) format("opentype");
+    }
+  `}
+        </style>
+
         <div style={carouselStyle}>
           <button
             onClick={prevSlide}
@@ -421,8 +440,8 @@ export default function ResponsiveCards() {
               style={index === currentIndex ? activeDotStyle : inactiveDotStyle}
               onMouseEnter={(e) => (e.target.style.transform = "scale(1.4)")}
               onMouseLeave={(e) =>
-                (e.target.style.transform =
-                  index === currentIndex ? "scale(1.25)" : "scale(1)")
+              (e.target.style.transform =
+                index === currentIndex ? "scale(1.25)" : "scale(1)")
               }
             />
           ))}
