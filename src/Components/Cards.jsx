@@ -21,7 +21,7 @@ export default function ResponsiveCards() {
     {
       id: 2,
       title: "Keshav Sadhna",
-      text: "“Dreams don’t work unless you do. Consistency is the only way to turn passion into reality.”",
+      text: "“Dreams don’t work unless you do. Consistency is the only way to turn passion into reality.” ",
       // author: "Keshav Sadhna",
       handle: "@keshavsadhna",
       image: "/spk2.jpeg",
