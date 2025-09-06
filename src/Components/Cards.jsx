@@ -16,7 +16,7 @@ export default function ResponsiveCards() {
       // author: "Nikhil Kamath",
       handle: "@nikhilkamathco",
       image: "/spk4.png",
-      // caption: "Adventure Enthusiasts",
+      caption: "Co-Founder Zerodha",
     },
     {
       id: 2,
@@ -25,6 +25,7 @@ export default function ResponsiveCards() {
       // author: "Keshav Sadhna",
       handle: "@keshavsadhna",
       image: "/spk2.jpeg",
+      caption: "Indian actor and model",
     },
     {
       id: 3,
@@ -33,6 +34,7 @@ export default function ResponsiveCards() {
       // author: "Harini Sivakumar",
       handle: "@harini_sivakumar",
       image: "/spk3.jpeg",
+      caption: "Founder and CEO of Earth Rhythm",
     },
   ];
 
@@ -423,7 +425,7 @@ export default function ResponsiveCards() {
                           e.target.style.fontSize = isMobile ? "3rem" : "4rem";
                         }}
                       />
-                      {/* <div style={captionStyle}>{testimonial.caption}</div> */}
+                      <div style={captionStyle}>{testimonial.caption}</div>
                     </div>
                   </div>
                 </div>
