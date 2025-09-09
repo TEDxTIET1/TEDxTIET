@@ -1,27 +1,27 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import "./ChromaGrid.css";
-import Img1 from "../assets/img1.webp";
+import "./EcGrid.css";
+import Img1 from "../assets/GridImages/img1.webp";
 
-import Img3 from "../assets/gridimages/img3.webp";
-import Img4 from "../assets/gridimages/img4.webp";
-import Img5 from "../assets/gridimages/img5.webp";
-import Img6 from "../assets/gridimages/img6.webp";
-import Img7 from "../assets/gridimages/img7.webp";
-import Img8 from "../assets/gridimages/Img8.webp";
-import Img9 from "../assets/gridimages/Img9.webp";
+import Img3 from "../assets/GridImages/img3.webp";
+import Img4 from "../assets/GridImages/img4.webp";
+import Img5 from "../assets/GridImages/img5.webp";
+import Img6 from "../assets/GridImages/img6.webp";
+import Img7 from "../assets/GridImages/img7.webp";
+import Img8 from "../assets/GridImages/Img8.webp";
+import Img9 from "../assets/GridImages/Img9.webp";
 
-import Img11 from "../assets/gridimages/Img11.webp";
-import Img12 from "../assets/gridimages/Img12.webp";
-import Img13 from "../assets/gridimages/Img13.webp";
-import Img14 from "../assets/gridimages/Img14.webp";
-import Img15 from "../assets/gridimages/Img15.webp";
-import Img16 from "../assets/gridimages/Img16.webp";
-import Img17 from "../assets/gridimages/Img17.webp";
-import Img18 from "../assets/gridimages/Img18.webp";
-import Img19 from "../assets/gridimages/Img19.webp";
-import Img20 from "../assets/gridimages/Img20.webp";
-import Img21 from "../assets/gridimages/Img21.webp";
+import Img11 from "../assets/GridImages/Img11.webp";
+import Img12 from "../assets/GridImages/Img12.webp";
+import Img13 from "../assets/GridImages/Img13.webp";
+import Img14 from "../assets/GridImages/Img14.webp";
+import Img15 from "../assets/GridImages/Img15.webp";
+import Img16 from "../assets/GridImages/Img16.webp";
+import Img17 from "../assets/GridImages/Img17.webp";
+import Img18 from "../assets/GridImages/Img18.webp";
+import Img19 from "../assets/GridImages/Img19.webp";
+import Img20 from "../assets/GridImages/Img20.webp";
+import Img21 from "../assets/GridImages/Img21.webp";
 const dummyimages = [
 Img5,Img6,Img7,Img8,Img9,Img11,Img12,Img13,Img14,Img15,Img16,Img17,Img18,Img19,Img20,Img21
 ];
@@ -31,7 +31,7 @@ const titles=[
 "Sanya"
 ]
 
-export const ChromaGrid = ({
+export const EcGrid = ({
   items,
   className = "",
   radius = 300,
@@ -198,4 +198,4 @@ export const ChromaGrid = ({
   );
 };
 
-export default ChromaGrid;
+export default EcGrid;
