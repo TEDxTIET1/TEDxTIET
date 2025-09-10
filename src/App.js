@@ -16,6 +16,7 @@ import StatsOverview from "./Components/StatsOverview.jsx";
 import Reveal from "./Components/Reveal"; // ✅ import preloader
 import ContactForm from "./Components/ContactForm.jsx";
 import InfiniteGallery from "./Components/infiniteGallery.jsx"
+import EbGrid from "./Components/EbGrid.jsx";
 
 // Scroll handler for /aboutus → testimonials
 function ScrollHandler() {
@@ -84,7 +85,8 @@ function App() {
         <Route path="/sponsor" element={<Sponsors />} />
         <Route path="/speakers" element={<Speaker />} />
         <Route path="/contact" element={<ContactForm />} />
-        <Route path="/team" element={<Team />} />
+        {/* <Route path="/team" element={<Team />} /> */}
+        <Route path="/team" element={<EbGrid/>} />
 
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />

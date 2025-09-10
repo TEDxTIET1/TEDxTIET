@@ -1,16 +1,17 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-import Image9 from '../assets/GridImages/Image9.webp';
-import Image3 from '../assets/GridImages/Image3.webp';
-import Image4 from '../assets/GridImages/Image4.webp';
-import Image5 from '../assets/GridImages/Image5.webp';
-import Image1 from '../assets/GridImages/Image1.webp';
-import Image6 from '../assets/GridImages/Image6.webp';
-import Image7 from '../assets/GridImages/Image7.webp';
-import Image8 from '../assets/GridImages/Image8.webp';
-import Image2 from '../assets/GridImages/Image2.webp';
-import Image10 from '../assets/GridImages/Image10.webp';
+import Image9 from '../assets/gridimages/Image9.webp';
+import Image3 from '../assets/gridimages/Image3.webp';
+import Image4 from '../assets/gridimages/Image4.webp';
+import Image5 from '../assets/gridimages/Image5.webp';
+import Image1 from '../assets/gridimages/Image1.webp';
+import Image6 from '../assets/gridimages/Image6.webp';
+import Image7 from '../assets/gridimages/Image7.webp';
+import Image8 from '../assets/gridimages/Image8.webp';
+import Image2 from '../assets/gridimages/Image2.webp';
+import Image10 from '../assets/gridimages/Image10.webp';
+import EcGrid from "./EcGrid";
 
 const placeholderImages = [
   Image9,
@@ -453,6 +454,7 @@ export const EbGrid = ({
           <div className="chroma-overlay"></div>
         </div>
       </section>
+      <EcGrid/>
     </>
   );
 };
