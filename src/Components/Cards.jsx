@@ -12,7 +12,7 @@ export default function ResponsiveCards() {
     {
       id: 1,
       title: "Nikhil Kamath",
-      text: "The days of four-year college courses are over. Lifelong learning is the new norm—for everyone.",
+      text: "“The days of four-year college courses are over. Lifelong learning is the new norm—for everyone.”",
       // author: "Nikhil Kamath",
       handle: "@nikhilkamathco",
       image: "/spk4.png",

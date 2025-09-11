@@ -1,17 +1,17 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-import Image9 from '../Assets/Image9.webp';
-import Image3 from '../Assets/Image3.webp';
-import Image4 from '../Assets/Image4.webp';
-import Image5 from '../Assets/Image5.webp';
-import Image1 from '../Assets/Image1.webp';
-import Image6 from '../Assets/Image6.webp';
-import Image7 from '../Assets/Image7.webp';
-import Image8 from '../Assets/Image8.webp';
-import Image2 from '../Assets/Image2.webp';
-import Image10 from '../Assets/Image10.webp';
-
+import Image9 from '../assets/gridimages/Image9.webp';
+import Image3 from '../assets/gridimages/Image3.webp';
+import Image4 from '../assets/gridimages/Image4.webp';
+import Image5 from '../assets/gridimages/Image5.webp';
+import Image1 from '../assets/gridimages/Image1.webp';
+import Image6 from '../assets/gridimages/Image6.webp';
+import Image7 from '../assets/gridimages/Image7.webp';
+import Image8 from '../assets/gridimages/Image8.webp';
+import Image2 from '../assets/gridimages/Image2.webp';
+import Image10 from '../assets/gridimages/Image10.webp';
+import EcGrid from './EcGrid.jsx';
 const placeholderImages = [
   Image9,
   Image7,
@@ -188,7 +188,7 @@ export const EbGrid = ({
           grid-template-rows: repeat(5, auto);
           justify-content: center;
           gap: 0.75rem;
-          max-width: 620px;
+          max-width: 1440px;
           margin: 0 auto;
           padding: 1rem;
           box-sizing: border-box;
@@ -459,6 +459,8 @@ export const EbGrid = ({
           <div className="chroma-overlay"></div>
         </div>
       </section>
+      <EcGrid/>
+
     </>
   );
 };
