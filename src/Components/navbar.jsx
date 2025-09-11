@@ -42,7 +42,7 @@ function CustomNavbar() {
         {/* ✅ Hamburger on the right */}
         <ReactNavbar.Toggle
           onClick={() => setShow(true)}
-          className="ms-auto nav-toggle-btn"
+          className="ms-auto nav-toggle-btn navbtnn"
         />
 
         <Offcanvas

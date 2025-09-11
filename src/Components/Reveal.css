@@ -21,6 +21,7 @@
   position: relative;
   transform: translateY(100%);
   animation: revealUp 1.2s ease-out forwards;
+  z-index:2;
 }
 
 /* Bar now only spans text container */
@@ -33,7 +34,7 @@
   background: red;
   transform: translateX(-100%);
   animation: sweep 1s ease-out forwards;
-  z-index: 2; /* above text until it moves out */
+  z-index: 1; /* above text until it moves out */
 }
 
 @keyframes sweep {
