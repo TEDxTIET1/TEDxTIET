@@ -1,17 +1,16 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-import Image9 from '../assets/gridimages/Image9.webp';
-import Image3 from '../assets/gridimages/Image3.webp';
-import Image4 from '../assets/gridimages/Image4.webp';
-import Image5 from '../assets/gridimages/Image5.webp';
-import Image1 from '../assets/gridimages/Image1.webp';
-import Image6 from '../assets/gridimages/Image6.webp';
-import Image7 from '../assets/gridimages/Image7.webp';
-import Image8 from '../assets/gridimages/Image8.webp';
-import Image2 from '../assets/gridimages/Image2.webp';
-import Image10 from '../assets/gridimages/Image10.webp';
-import EcGrid from "./EcGrid";
+import Image9 from '../Assets/Image9.webp';
+import Image3 from '../Assets/Image3.webp';
+import Image4 from '../Assets/Image4.webp';
+import Image5 from '../Assets/Image5.webp';
+import Image1 from '../Assets/Image1.webp';
+import Image6 from '../Assets/Image6.webp';
+import Image7 from '../Assets/Image7.webp';
+import Image8 from '../Assets/Image8.webp';
+import Image2 from '../Assets/Image2.webp';
+import Image10 from '../Assets/Image10.webp';
 
 const placeholderImages = [
   Image9,
@@ -332,22 +331,28 @@ export const EbGrid = ({
           border-radius: 10px;
         }
 
-        .chroma-info {
-          position: relative;
-          z-index: 1;
-          padding: 0.75rem 1rem;
-          color: #fff;
-          font-family: system-ui, sans-serif;
-          display: grid;
-          grid-template-columns: 1fr auto;
-          row-gap: 0.25rem;
-          column-gap: 0.75rem;
-        }
+.chroma-info {
+  position: relative;
+  z-index: 1;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  display: block; /* stack vertically */
+}
 
-        .chroma-info .role,
-        .chroma-info .handle {
-          color: #aaa;
-        }
+.chroma-info .role {
+  color: #e54646; /* red */
+  font-weight: bold;
+  font-size: 1.2rem; /* increased size */
+  white-space: nowrap;
+}
+
+
+.chroma-info .handle {
+  color: #aaa;
+  margin-top: 0.25rem;
+}
+
 
         .chroma-overlay {
           position: absolute;
@@ -454,7 +459,6 @@ export const EbGrid = ({
           <div className="chroma-overlay"></div>
         </div>
       </section>
-      <EcGrid/>
     </>
   );
 };

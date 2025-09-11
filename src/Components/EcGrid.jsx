@@ -9,7 +9,7 @@ import Img6 from "../assets/GridImages/img6.webp";
 import Img7 from "../assets/GridImages/img7.webp";
 import Img8 from "../assets/GridImages/Img8.webp";
 import Img9 from "../assets/GridImages/Img9.webp";
-import Img11 from "../assets/GridImages/Img11.webp";
+
 import Img12 from "../assets/GridImages/Img12.webp";
 import Img13 from "../assets/GridImages/Img13.webp";
 import Img14 from "../assets/GridImages/Img14.webp";
@@ -20,9 +20,10 @@ import Img18 from "../assets/GridImages/Img18.webp";
 import Img19 from "../assets/GridImages/Img19.webp";
 import Img20 from "../assets/GridImages/Img20.webp";
 import Img21 from "../assets/GridImages/Img21.webp";
+import Im from "../assets/GridImages/im.webp";
 
 const dummyimages = [
-  Img5, Img6, Img7, Img8, Img9, Img11, Img12, Img13, Img14,
+  Img5, Img6, Img7, Img8, Img9, Im, Img12, Img13, Img14,
   Img15, Img16, Img17, Img18, Img19, Img20, Img21,
 ];
 
@@ -30,7 +31,7 @@ const titles = [
   "Puneet Kumar", "Rohan Sharma", "Poorva", "Mehul Kujur",
   "Pavni Goel", "Khyati Goyal", "Kaushik Arora", "Daksh Sachdeva",
   "Disha Verma", "Anushka Pandey", "Birapar Singh", "Aniket Gupta",
-  "Aanya", "Atishay Jain", "Aastha Mahajan", "Sanya",
+  "Aanya Garg", "Atishay Jain", "Aastha Mahajan", "Sanya",
 ];
 
 export const EcGrid = ({
@@ -43,8 +44,6 @@ export const EcGrid = ({
 }) => {
   const rootRef = useRef(null);
   const fadeRef = useRef(null);
-  const setX = useRef(null);
-  const setY = useRef(null);
   const pos = useRef({ x: 0, y: 0 });
 
   // Original 3 cards + 16 dummy cards = 19 total
@@ -87,12 +86,9 @@ export const EcGrid = ({
   useEffect(() => {
     const el = rootRef.current;
     if (!el) return;
-    setX.current = gsap.quickSetter(el, "--x", "px");
-    setY.current = gsap.quickSetter(el, "--y", "px");
+
     const { width, height } = el.getBoundingClientRect();
     pos.current = { x: width / 2, y: height / 2 };
-    setX.current(pos.current.x);
-    setY.current(pos.current.y);
   }, []);
 
   const moveTo = (x, y) => {
@@ -102,8 +98,10 @@ export const EcGrid = ({
       duration: damping,
       ease,
       onUpdate: () => {
-        setX.current?.(pos.current.x);
-        setY.current?.(pos.current.y);
+        if (rootRef.current) {
+          rootRef.current.style.setProperty("--x", `${pos.current.x}px`);
+          rootRef.current.style.setProperty("--y", `${pos.current.y}px`);
+        }
       },
       overwrite: true,
     });
@@ -123,25 +121,51 @@ export const EcGrid = ({
     });
   };
 
+  // --- New combined event handlers for spotlight on cards ---
+  const handleGridMouseMove = (e) => {
+    const r = rootRef.current.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+
+    // Find the hovered card
+    const targetCard = e.target.closest(".chroma-card");
+    if (!targetCard || !rootRef.current.contains(targetCard)) return;
+
+    // Calculate spotlight position inside hovered card
+    const rect = targetCard.getBoundingClientRect();
+    const mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+    const mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+
+    // Update spotlight position for hovered card
+    targetCard.style.setProperty("--mouse-x", `${mouseX}%`);
+    targetCard.style.setProperty("--mouse-y", `${mouseY}%`);
+
+    // Reset spotlight for other cards
+    rootRef.current.querySelectorAll(".chroma-card").forEach(card => {
+      if (card !== targetCard) {
+        card.style.setProperty("--mouse-x", "50%");
+        card.style.setProperty("--mouse-y", "50%");
+      }
+    });
+
+    // Fade overlay on grid as before
+    gsap.to(fadeRef.current, { opacity: 0, duration: 0.25, overwrite: true });
+  };
+
+  const handleGridMouseLeave = () => {
+    // Reset spotlight on all cards to center
+    rootRef.current.querySelectorAll(".chroma-card").forEach(card => {
+      card.style.setProperty("--mouse-x", "50%");
+      card.style.setProperty("--mouse-y", "50%");
+    });
+    // Fade overlay back in
+    gsap.to(fadeRef.current, { opacity: 1, duration: fadeOut, overwrite: true });
+  };
+
   const handleCardClick = (url) => {
     if (url) {
       window.open(url, "_blank", "noopener,noreferrer");
     }
-  };
-
-  const handleCardMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    card.style.setProperty("--mouse-x", `${x}%`);
-    card.style.setProperty("--mouse-y", `${y}%`);
-  };
-
-  const handleCardLeave = (e) => {
-    const card = e.currentTarget;
-    card.style.setProperty("--mouse-x", "50%");
-    card.style.setProperty("--mouse-y", "50%");
   };
 
   return (
@@ -150,20 +174,24 @@ export const EcGrid = ({
       <div
         ref={rootRef}
         className={`chroma-grid ${className}`}
+        onMouseMove={handleGridMouseMove}
+        onMouseLeave={handleGridMouseLeave}
         onPointerMove={handleMove}
         onPointerLeave={handleLeave}
+        style={{ "--r": `${radius}px` }}
       >
         {data.map((c, i) => (
           <article
             key={i}
             className="chroma-card"
-            onMouseMove={handleCardMove}
-            onMouseLeave={handleCardLeave}
             onClick={() => handleCardClick(c.url)}
             style={{
               "--card-border": c.borderColor || "transparent",
               "--card-gradient": c.gradient,
               cursor: c.url ? "pointer" : "default",
+              // Initialize spotlight center
+              "--mouse-x": "50%",
+              "--mouse-y": "50%",
             }}
           >
             <div className="chroma-img-wrapper">
