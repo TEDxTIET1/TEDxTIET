@@ -65,8 +65,7 @@ export const EbGrid = ({
       "#be3535ff",
       "#f15757ff",
     ][index % 6],
-    gradient: `linear-gradient(${135 + ((index * 15) % 360)}deg, ${
-      [
+    gradient: `linear-gradient(${135 + ((index * 15) % 360)}deg, ${[
         "#f50b3aff",
         "#e54646ff",
         "#EF4444",
@@ -74,7 +73,7 @@ export const EbGrid = ({
         "#f15757ff",
         "#b91024ff",
       ][index % 6]
-    }, #000)`,
+      }, #000)`,
     url: "https://example.com",
   }));
 
@@ -156,6 +155,21 @@ export const EbGrid = ({
       `}</style>
 
       <style jsx>{`
+      @media (max-width: 1000px) {
+  .chroma-card {
+    animation: float 3s ease-in-out infinite;
+    background: rgba(229, 70, 70, 0.15) !important;
+    /* keep red background */
+    border-color: #e54646;
+  }
+
+  /* Disable spotlight hover effect for mobile */
+  .chroma-card::before,
+  .chroma-overlay,
+  .chroma-fade {
+    display: none !important;
+  }
+}
         .team-section {
           padding: 2rem 1rem;
           max-width: 1200px;
@@ -459,7 +473,7 @@ export const EbGrid = ({
           <div className="chroma-overlay"></div>
         </div>
       </section>
-      <EcGrid/>
+      <EcGrid />
 
     </>
   );
