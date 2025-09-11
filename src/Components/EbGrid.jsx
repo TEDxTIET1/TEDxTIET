@@ -66,13 +66,13 @@ export const EbGrid = ({
       "#f15757ff",
     ][index % 6],
     gradient: `linear-gradient(${135 + ((index * 15) % 360)}deg, ${[
-        "#f50b3aff",
-        "#e54646ff",
-        "#EF4444",
-        "#be3535ff",
-        "#f15757ff",
-        "#b91024ff",
-      ][index % 6]
+      "#f50b3aff",
+      "#e54646ff",
+      "#EF4444",
+      "#be3535ff",
+      "#f15757ff",
+      "#b91024ff",
+    ][index % 6]
       }, #000)`,
     url: "https://example.com",
   }));
