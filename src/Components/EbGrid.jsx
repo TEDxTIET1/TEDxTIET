@@ -440,7 +440,7 @@ export const EbGrid = ({
       <section className="team-section">
         <div className="team-header">
           <h2 className="team-title">{title}</h2>
-          <p className="team-subtitle">OUR TEAM MENTORS</p>
+          <p className="team-subtitle">OUR TEAM</p>
         </div>
         <div
           className={`chroma-grid ${className}`}
