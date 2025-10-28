@@ -1,0 +1,48 @@
+.event-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #373739; /* light gray */
+  font-family: sans-serif;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  color:white;
+}
+
+.event-details {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.register-btn {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #0056b3;
+}
+
+.event-images img {
+  width: 100%;
+  height: auto;        /* ✅ auto height keeps full image ratio */
+  object-fit: contain; /* ✅ ensures full image fits inside the box */
+  margin-bottom: 15px;
+  border-radius: 10px;
+}

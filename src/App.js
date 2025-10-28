@@ -13,10 +13,12 @@ import Team from "./Components/Team.jsx";
 import Sponsors from "./Components/Sponsors.jsx";
 import Speaker from "./Components/Speaker.jsx";
 import StatsOverview from "./Components/StatsOverview.jsx";
-import Reveal from "./Components/Reveal"; // ✅ import preloader
+import Reveal from "./Components/Reveal"; // preloader
 import ContactForm from "./Components/ContactForm.jsx";
-import InfiniteGallery from "./Components/infiniteGallery.jsx"
+import InfiniteGallery from "./Components/infiniteGallery.jsx";
 import EbGrid from "./Components/EbGrid.jsx";
+import Event from "./Components/Event.jsx"; // ✅ Event page
+import Register from "./Components/Register.jsx"; // ✅ Register page
 
 // Scroll handler for /aboutus → testimonials
 function ScrollHandler() {
@@ -47,7 +49,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <Reveal />; // ✅ Show preloader first
+    return <Reveal />; // Show preloader first
   }
 
   return (
@@ -76,6 +78,12 @@ function App() {
         {/* Redirect /aboutus → home */}
         <Route path="/aboutus" element={<Navigate to="/" />} />
 
+        {/* Event page */}
+        <Route path="/event" element={<Event />} />
+
+        {/* Register page */}
+        <Route path="/register" element={<Register />} />
+
         {/* Optional direct component routes */}
         <Route path="/home" element={<Navigate to="/" />} />
         <Route path="/cards" element={<Cards />} />
@@ -85,8 +93,7 @@ function App() {
         <Route path="/sponsor" element={<Sponsors />} />
         <Route path="/speakers" element={<Speaker />} />
         <Route path="/contact" element={<ContactForm />} />
-        {/* <Route path="/team" element={<Team />} /> */}
-        <Route path="/team" element={<EbGrid/>} />
+        <Route path="/team" element={<EbGrid />} />
 
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />
