@@ -142,7 +142,7 @@ function Footer() {
         ></a>
       </div>
       <hr style={{ border: "1px solid white", marginBottom: "10px" }} />
-      <p>© {new Date().getFullYear()} TEDxTIET. All rights reserved.</p>
+      <p>© {new Date().getFullYear()} TEDxTIET.     All rights reserved.</p>
     </footer>
   );
 }
