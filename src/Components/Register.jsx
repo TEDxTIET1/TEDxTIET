@@ -34,22 +34,19 @@ const Register = () => {
     }
 
     const registrationData = {
-      name: formData.name,
-      roll_no: formData.roll_no,
-      email: formData.email,
-      phone_no: formData.phone_no.trim() === "" ? null : formData.phone_no,
+      name: formData.name.trim(),
+      roll_no: formData.roll_no.trim(),
+      email: formData.email.trim(),
+      phone_no: formData.phone_no.trim() === "" ? null : formData.phone_no.trim(),
       year_of_study: parseInt(formData.year_of_study),
     };
 
     try {
-      const { error } = await supabase
-        .from("registrations")
-        .insert([registrationData]);
-
+      const { error } = await supabase.from("registrations").insert([registrationData]);
       if (error) throw error;
 
       setMessageType("success");
-      setMessage("Registration successful! Welcome.");
+      setMessage("🎉 Registration successful! Welcome aboard.");
       setFormData({
         name: "",
         roll_no: "",
@@ -61,36 +58,69 @@ const Register = () => {
       console.error("Supabase error:", error);
       let friendlyMessage = "Registration failed. Please try again.";
       if (error.code === "23505")
-        friendlyMessage = "This Roll No. or Email is already registered.";
+        friendlyMessage = "⚠️ This Roll No. or Email is already registered.";
       setMessageType("error");
       setMessage(friendlyMessage);
     }
   };
 
   return (
-    <div className="register-container" style={{ padding: "40px", background: "#f3f4f6", minHeight: "100vh" }}>
-      <h2>Event Registration</h2>
-      <form id="registration-form" onSubmit={handleSubmit}>
-        <input id="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
-        <input id="roll_no" placeholder="Roll Number" value={formData.roll_no} onChange={handleChange} required />
-        <input id="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-        <input id="phone_no" placeholder="Phone Number" value={formData.phone_no} onChange={handleChange} />
-        <input id="year_of_study" placeholder="Year of Study" value={formData.year_of_study} onChange={handleChange} required />
+    <main className="register-page">
+      <h1>Student Registration</h1>
 
-        <button type="submit">Submit</button>
+      <form id="registration-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input id="name" type="text" value={formData.name} onChange={handleChange} required />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="roll_no">Roll No.</label>
+          <input id="roll_no" type="text" value={formData.roll_no} onChange={handleChange} required />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="email">Thapar Email ID</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="example@thapar.edu"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="phone_no">Phone No.</label>
+          <input id="phone_no" type="tel" value={formData.phone_no} onChange={handleChange} required />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="year_of_study">Year of Study</label>
+          <select id="year_of_study" value={formData.year_of_study} onChange={handleChange} required>
+            <option value="">-- Select your year --</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+          </select>
+        </div>
+
+        <button type="submit" className="btn-submit">
+          Register
+        </button>
       </form>
 
       {message && (
-        <p
-          style={{
-            color: messageType === "error" ? "red" : "green",
-            marginTop: "20px",
-          }}
+        <div
+          className={`message-container ${messageType}`}
+          style={{ marginTop: "20px", fontWeight: "500" }}
         >
           {message}
-        </p>
+        </div>
       )}
-    </div>
+    </main>
   );
 };
 

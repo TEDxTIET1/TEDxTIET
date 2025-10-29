@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import event1 from "../assets/First.png";
-import event2 from "../assets/Second.png";
-import event3 from "../assets/Third.png";
+import event1 from "../assets/First.webp";
+import event2 from "../assets/Second.webp";
+import event3 from "../assets/Third.webp";
 import "./Event.css";
 
 const Event = () => {
