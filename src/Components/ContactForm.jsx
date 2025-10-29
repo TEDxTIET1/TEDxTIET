@@ -33,7 +33,7 @@ export default function ContactForm() {
         window.location.href = "/home";
     };
     return (
-        <div>
+        <div className="contact-form-container">
 
             <div className="login-box">
                 <h2>Contact Us</h2>

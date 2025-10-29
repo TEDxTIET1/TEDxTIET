@@ -41,6 +41,7 @@ const Event = () => {
   }, []);
 
   return (
+  <div className="event-container-main">
     <div className="event-container">
       {/* ==== Event Details Section ==== */}
       <section className="event-details" id="event">
@@ -78,10 +79,11 @@ const Event = () => {
 
       {/* ==== Event Images Section ==== */}
       <div className="event-images">
-        <img src={event1} alt="Event 1" />
+        {/* <img src={event1} alt="Event 1" />
         <img src={event2} alt="Event 2" />
-        <img src={event3} alt="Event 3" />
+        <img src={event3} alt="Event 3" /> */}
       </div>
+    </div>
     </div>
   );
 };

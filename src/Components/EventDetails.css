@@ -118,13 +118,3 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: url("../assets/background.svg");
-  /* background-size: cover; makes it full page */
-  /* background-attachment: fixed; keeps it steady on scroll */
-}
