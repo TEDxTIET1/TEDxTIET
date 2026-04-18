@@ -38,20 +38,22 @@ const EventDetails = () => {
       <div className="cursor-circle"></div>
 
       <div className="event-container">
-        <h2 className="event-title">TEDx Conference 2025</h2>
-        <p className="event-tagline">The Unseen Dimensions</p>
+        <h2 className="event-title">RED DAY 2026</h2>
+        <p className="event-tagline">Moments that shape us</p>
 
         <div className="event-info">
-          <p><strong>Date:</strong> 1 Nov 2025</p>
-          <p><strong>Time:</strong> 2 PM</p>
+          <p><strong>Date:</strong> 20 April 2026</p>
+          <p><strong>Time:</strong> 4:30 PM</p>
           <p><strong>Venue:</strong> Main Auditorium</p>
         </div>
 
         <a
-          href="/event"
+          href="https://unstop.com/o/J4DHu2p?utm_medium=Share&utm_source=tedxsoc5964&utm_campaign=Competitions"
+          target="_blank"
+          rel="noopener noreferrer"
           className="register-btn"
         >
-          View Details
+          Register Now
         </a>
       </div>
     </section>
