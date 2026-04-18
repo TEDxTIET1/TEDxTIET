@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./EventDetails.css";
 
 const EventDetails = () => {
+  const cursorRef = useRef(null);
+  const sectionRef = useRef(null);
+
   useEffect(() => {
-    const cursor = document.querySelector(".cursor-circle");
-    const section = document.querySelector(".event-details");
+    const cursor = cursorRef.current;
+    const section = sectionRef.current;
 
     if (!cursor || !section) return;
 
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
+    let animationFrameId;
 
     const moveCursor = (e) => {
       const rect = section.getBoundingClientRect();
@@ -18,11 +22,15 @@ const EventDetails = () => {
     };
 
     const animate = () => {
-      // Smooth easing for natural movement
       currentX += (mouseX - currentX) * 0.15;
       currentY += (mouseY - currentY) * 0.15;
-      cursor.style.transform = `translate(${currentX - 110}px, ${currentY - 160}px)`; 
-      requestAnimationFrame(animate);
+
+      const offsetX = cursor.offsetWidth / 2;
+      const offsetY = cursor.offsetHeight / 2;
+
+      cursor.style.transform = `translate(${currentX - offsetX}px, ${currentY - offsetY}px)`;
+
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     section.addEventListener("mousemove", moveCursor);
@@ -30,12 +38,13 @@ const EventDetails = () => {
 
     return () => {
       section.removeEventListener("mousemove", moveCursor);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
-    <section className="event-details" id="event">
-      <div className="cursor-circle"></div>
+    <section className="event-details" id="event" ref={sectionRef}>
+      <div className="cursor-circle" ref={cursorRef}></div>
 
       <div className="event-container">
         <h2 className="event-title">RED DAY 2026</h2>
